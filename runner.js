@@ -94,12 +94,15 @@ Runner = {
       puts('\n');
     }
 
+    function _results() {
+      process.addListener('exit', function () {
+        results(Runner.total, Runner.successes, Runner.failures);
+      });
+    }
+
     _findFiles();
     _execSpecs();
-
-    process.addListener('exit', function () {
-      results(Runner.total, Runner.successes, Runner.failures);
-    });
+    _results();
   }
   
 };
