@@ -13,9 +13,9 @@ exports.stringer = function(obj) {
     props = props.sort();
 
     for(var i = 0, ii = props.length; i < ii; i++)
-      els.push([props[i], stringer(o[props[i]])].join(':'));
+      els.push([props[i], stringer(o[props[i]])].join(': '));
 
-    return '{' + els.join(',') + '}';
+    return '{\n' + els.join(',\n') + '\n}';
   }
 
   function _array(a) {
