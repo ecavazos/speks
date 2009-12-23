@@ -7,14 +7,15 @@ Runner = {
   specs: [],
   successes: [],
   failures: [],
+  opts: {},
 
   fail: function(message) {
-    print(Options.verbose ? 'Fail ' : 'F');
+    print(Runner.opts.verbose ? 'Fail' : 'F');
     Runner.failures.push(Runner.specs.join(' ') + '\n' + message + '\n\n');
   },
 
   pass: function() {
-    print(Options.verbose ? 'Pass ' : '.');
+    print(Runner.opts.verbose ? 'Pass' : '.');
     Runner.successes.push(Runner.specs.join(' ') + '\n');
   },
 
@@ -22,10 +23,10 @@ Runner = {
     var specDirectory = path.dirname(__filename) + '/spec/';
     var files = [];
 
-    Options.init();
+    Runner.opts = Options.parse(process.ARGV);
 
     function _error(message) {
-      print(Options.verbose ? 'Error (' + message + ') ' : 'E');
+      print(Runner.opts.verbose ? 'Error (' + message + ') ' : 'E');
       Runner.failures.push(Runner.specs.join(' ') + '\n' + message + '\n');
     }
 
@@ -35,10 +36,15 @@ Runner = {
 
     function describe(name, func) {
       Runner.specs.push(name);
-      if (Options.verbose) print(name);
-      specBeforeEach = specAfterEach = function() {};
+      
+      if (Runner.opts.verbose) print(name);
+      
+      _beforeEach = _afterEach = function() {};
+      
       func();
-      if (Options.verbose) print('\n\n');
+
+      if (Runner.opts.verbose) print('\n\n');
+
       Runner.specs.pop();
     }
    
@@ -46,9 +52,9 @@ Runner = {
       Runner.total++;
       Runner.specs.push(name);
       
-      if (Options.verbose) print('\n '+name+' : ');
+      if (Runner.opts.verbose) print('\n ' + name + ' : ');
 
-      specBeforeEach();
+      _beforeEach();
 
       try {
         func();
@@ -57,15 +63,16 @@ Runner = {
       }
 
       Runner.specs.pop();
-      specAfterEach();
+
+      _afterEach();
     }
 
     function beforeEach(func) {
-      specBeforeEach = func;
+      _beforeEach = func;
     }
    
     function afterEach(func) {
-      specAfterEach = func;
+      _afterEach = func;
     }
 
     // =======================================
@@ -73,8 +80,8 @@ Runner = {
     // =======================================
 
     function _findFiles() {
-      if(Options.fileName) {
-        files.push(Options.fileName.substr(1)); // remove leading comma
+      if(Runner.opts.filename) {
+        files.push(Runner.opts.filename);
         return;
       }
 
@@ -86,7 +93,7 @@ Runner = {
         var file = files[i];
         if(!file.match(/_spec.js$/)) continue;
 
-        if (Options.verbose) puts(file);
+        if (Runner.opts.verbose) puts(file);
         var spec = posix.cat(specDirectory + '/' + file, 'utf8').wait();
         eval(spec);
       }
