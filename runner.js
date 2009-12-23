@@ -1,8 +1,9 @@
-// require
+var Speks = module.parent.exports.Speks;
+
 var path = require('path');
 var posix = require('posix');
 
-Runner = {
+var Runner = {
   total: 0,
   specs: [],
   successes: [],
@@ -20,11 +21,12 @@ Runner = {
   },
 
   run: function() { 
+    
     var specDirectory = path.dirname(__filename) + '/spec/';
     var files = [];
 
-    Runner.opts = Options.parse(process.ARGV);
-
+    Runner.opts = Speks.Options.parse(process.ARGV);
+    
     function _error(message) {
       print(Runner.opts.verbose ? 'Error (' + message + ') ' : 'E');
       Runner.failures.push(Runner.specs.join(' ') + '\n' + message + '\n');
@@ -103,7 +105,7 @@ Runner = {
 
     function _results() {
       process.addListener('exit', function () {
-        results(Runner.total, Runner.successes, Runner.failures);
+        Speks.results(Runner.total, Runner.successes, Runner.failures);
       });
     }
 
@@ -113,3 +115,5 @@ Runner = {
   }
   
 };
+
+exports.Runner = Runner;

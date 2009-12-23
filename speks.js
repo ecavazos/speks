@@ -1,14 +1,23 @@
  
 (function() {
-  
-  process.mixin(require('sys'));
-  process.mixin(require('./stringer'));
-  process.mixin(require('./equal'));  
-  process.mixin(require('./should'));
-  process.mixin(require('./options'));
-  process.mixin(require('./results'));
-  process.mixin(require('./runner'));
 
-  Runner.run();
+  var Speks = exports.Speks = {};
+
+  process.mixin(require('sys'));
+  
+  process.mixin(
+    Speks,
+    require('./stringer'),
+    require('./equal'),
+    require('./options'),
+    require('./results'),
+    require('./runner')
+  );
+
+  process.mixin(require('./should'));
+  
+  Speks.zee = 'blah!';
+  Speks.Runner.run();
+  
 
 })();
