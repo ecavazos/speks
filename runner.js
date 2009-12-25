@@ -20,12 +20,12 @@ var Runner = exports.Runner = function() {
 Runner.prototype = {
 
   fail: function(message) {
-    print(this.opts.verbose ? 'Fail' : 'F');
+    sys.print(this.opts.verbose ? 'Fail' : 'F');
     this.failures.push(this.specs.join(' ') + '\n' + message + '\n\n');
   },
 
   pass: function() {
-    print(this.opts.verbose ? 'Pass' : '.');
+    sys.print(this.opts.verbose ? 'Pass' : '.');
     this.successes.push(this.specs.join(' ') + '\n');
   },
 
@@ -48,13 +48,13 @@ Runner.prototype = {
     function describe(name, func) {
       _self.specs.push(name);
       
-      if (_self.opts.verbose) print(name);
+      if (_self.opts.verbose) sys.print(name);
       
       _beforeEach = _afterEach = function() {};
       
       func();
 
-      if (_self.opts.verbose) print('\n\n');
+      if (_self.opts.verbose) sys.print('\n\n');
 
       _self.specs.pop();
     }
@@ -63,7 +63,7 @@ Runner.prototype = {
       _self.total++;
       _self.specs.push(name);
       
-      if (_self.opts.verbose) print('\n ' + name + ' : ');
+      if (_self.opts.verbose) sys.print('\n ' + name + ' : ');
 
       _beforeEach();
 
@@ -104,12 +104,12 @@ Runner.prototype = {
         var file = files[i];
         if(!file.match(/_spec.js$/)) continue;
 
-        if (_self.opts.verbose) puts(file);
+        if (_self.opts.verbose) sys.puts(file);
         var spec = posix.cat(specDirectory + '/' + file, 'utf8').wait();
         eval(spec);
       }
 
-      puts('\n');
+      sys.puts('\n');
     }
 
     function _results() {

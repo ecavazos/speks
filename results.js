@@ -1,3 +1,5 @@
+var sys = require('sys');
+
 exports.out = function(total, passed, failed) {
 
   function _summary() {
@@ -19,7 +21,7 @@ exports.out = function(total, passed, failed) {
     return str;
   }
   
-  puts(_failures());
-  puts(_summary());
+  sys.puts(_failures());
+  sys.puts(_summary());
 };
 
