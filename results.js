@@ -1,4 +1,4 @@
-exports.results = function(total, passed, failed) {
+exports.out = function(total, passed, failed) {
 
   function _summary() {
     var t = total + ' spec' + (total != 1 ? 's' : '');

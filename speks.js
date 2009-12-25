@@ -1,23 +1,6 @@
- 
-(function() {
+process.mixin(require('sys'));
 
-  var Speks = exports.Speks = {};
+var runner = require('./runner');
+var r = new runner.Runner();
 
-  process.mixin(require('sys'));
-  
-  process.mixin(
-    Speks,
-    require('./stringer'),
-    require('./equal'),
-    require('./options'),
-    require('./results'),
-    require('./runner')
-  );
-
-  process.mixin(require('./should'));
-  
-  Speks.zee = 'blah!';
-  Speks.Runner.run();
-  
-
-})();
+r.run();

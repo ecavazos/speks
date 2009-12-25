@@ -1,4 +1,4 @@
-exports.stringer = function(obj) {
+exports.tostr = function(obj) {
 
   function _object(o) {
     if(o === null) return 'null';
