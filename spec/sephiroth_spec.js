@@ -1,4 +1,4 @@
-var s = require("./spec/sephiroth");
+var s = require("sephiroth");
 
 describe("Sephiroth", function() {
 

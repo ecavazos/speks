@@ -1,7 +1,6 @@
-var c = require("./spec/cloud");
-
 describe("Cloud", function() {
-
+  //var c = require(process.cwd() + "/spec/cloud");
+  var c = require('cloud');
   var cloud = c.cloud;
 
   it("should be named 'Cloud'", function() {
