@@ -1,7 +1,13 @@
 describe("Cloud", function() {
+  
   //var c = require(process.cwd() + "/spec/cloud");
   var c = require('cloud');
-  var cloud = c.cloud;
+      cloud = {};
+
+  beforeEach(function() {
+    cloud = c.cloud;
+  });
+
 
   it("should be named 'Cloud'", function() {
     cloud.name().shouldEqual('Cloud');
