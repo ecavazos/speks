@@ -9,8 +9,7 @@ Speks
 
 1. Add a **spec/** directory to the root of your project.
 2. Copy speks.js and the lib directory to your **spec/** directory.
-3. Add some specs to your **spec/** directory: ex. example_spec.js
-  * note: the "_spec.js" portion of the name is a required convention
+3. Add some specs to your **spec/** directory: ex. example**_spec.js**
 4. Run your specs with the following command: **node spec/speks.js**
 
 ### Example Spec
@@ -46,6 +45,16 @@ examples in the spec directory.
       });
       
     });
+
+### Command Line Options
+Verbose mode:
+    node speks.js --verbose
+
+Single file mode:
+    node speks.js example_spec.js
+
+Both options:
+    node speks.js example_spec.js --verbose
 
 ### TODO
 
