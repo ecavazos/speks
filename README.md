@@ -10,13 +10,14 @@ Speks
 1. Add a **spec/** directory to the root of your project.
 2. Copy speks.js and the lib directory to your **spec/** directory.
 3. Add some specs to your **spec/** directory: ex. example_spec.js
- * note: the "_spec.js" portion of the name is a required convention
+  * note: the "_spec.js" portion of the name is a required convention
 4. Run your specs with the following command: **node spec/speks.js**
 
 ### Example Spec
 
 One thing to notice is the use of require in this example.  I was unable to make node.js require a module that was up a directory.
-As a hack, I modified request.paths so you can require files in your project and node will search for them.
+As a hack, I modified request.paths so you can require files in your project and node will search for them.  You can find more
+examples in the spec directory.
 
     describe("Sephiroth", function() {
 
