@@ -1,18 +1,27 @@
-var s = require("sephiroth");
-
 describe("Sephiroth", function() {
 
+  var s = require("sephiroth");
   var sephiroth;
 
   beforeEach(function() {
-    sephiroth = new s.sephiroth();
+    sephiroth = new s.Sephiroth();
   });
 
   it("should be named 'Sephiroth'", function() {
-    sephiroth.name().shouldEqual('Sephiroth');
+    sephiroth.getName().shouldEqual('Sephiroth');
+  });
+
+  it("should allow name changing", function() {
+    sephiroth.setName('Pedro');
+    sephiroth.getName().shouldEqual('Pedro');
   });
 
   it("should be have an hp of 999", function() {
-    sephiroth.hp().shouldEqual(999);
+    sephiroth.getHp().shouldEqual(999);
   });
+
+  it("should be have an mp of 999", function() {
+    sephiroth.getMp().shouldEqual(999);
+  });
+  
 });

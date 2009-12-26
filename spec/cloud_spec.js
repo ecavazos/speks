@@ -1,31 +1,29 @@
 describe("Cloud", function() {
-  
-  //var c = require(process.cwd() + "/spec/cloud");
+ 
+  // you can also require modules like so:
+  // var c = require(process.cwd() + "/spec/cloud");
+
   var c = require('cloud');
       cloud = {};
 
   beforeEach(function() {
-    cloud = c.cloud;
+    cloud = new c.Cloud();
   });
-
 
   it("should be named 'Cloud'", function() {
-    cloud.name().shouldEqual('Cloud');
+    cloud.getName().shouldEqual('Cloud');
   });
 
-  it('should assert equality of objects', function() {
-    var obj1 = function() {
-      this.foo = 'foo';
-      this.bar = function() { return 'bar'; };
-    };
+  it("should allow name changing", function() {
+    cloud.setName('Rain-Cloud');
+    cloud.getName().shouldEqual('Rain-Cloud');
+  });
 
-    var obj2 = function() {
-      this.foo = 'foo';
-      this.bar = function() { return 'bar'; };
-    };
+  it("should be have an hp of 99", function() {
+    cloud.getHp().shouldEqual(99);
+  });
 
-    var a = new obj1();
-
-    a.shouldEqual(a);
+  it("should be have an mp of 77", function() {
+    cloud.getMp().shouldEqual(77);
   });
 });

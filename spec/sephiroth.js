@@ -1,14 +1,14 @@
-var sephiroth = function() {
-  this._name = "Sephiroth";
-  this._hp = 999;
+var Sephiroth = function() {
+  var _name = 'Sephiroth';
+  var _hp = 999;
+  var _mp = 999;
+
+  return {
+    getName: function() {return _name;},
+    setName: function(n) {return _name = n;},
+    getHp: function() {return _hp;},
+    getMp: function() {return _mp;}
+  };
 };
 
-sephiroth.prototype.name = function() {
-  return this._name;
-};
-
-sephiroth.prototype.hp = function() {
-  return this._hp;
-}
-
-exports.sephiroth = sephiroth;
+exports.Sephiroth = Sephiroth;
