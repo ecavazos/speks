@@ -3,14 +3,14 @@ Speks
 
 ## Easily Test Your Node-Code
 
-**Speks** Speks is a simple specification framework and spec-runner for node.js code.
+**Speks** is a simple specification framework and spec-runner for node.js code.
 
 ### Usage
 
 1. Add a **spec/** directory to the root of your project.
 2. Copy speks.js and the lib directory to your **spec/** directory.
 3. Add some specs to your **spec/** directory: ex. example_spec.js
- - note: the "_spec.js" portion of the name is a required convention
+ * note: the "_spec.js" portion of the name is a required convention
 4. Run your specs with the following command: **node spec/speks.js**
 
 ### Example Spec
@@ -48,4 +48,6 @@ As a hack, I modified request.paths so you can require files in your project and
 
 ### TODO
 
-* make a todo list :)
+* Make a sample app
+* Create a few more should extensions
+* Create an auto-running server, like autotest/autospec
