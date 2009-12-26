@@ -16,7 +16,7 @@ run **node speks.js** at the command line.
 ### Example Spec
 
 One thing to notice is the use of require in this example.  I was unable to make node.js require a module that was up a directory.
-As a hack, I modified request.paths so you can require files in your project and node will search for them.  You can find more
+As a hack, I modified require.paths so you can require files in your project and node will search for them.  You can find more
 examples in the spec directory.
 
     describe("Sephiroth", function() {
