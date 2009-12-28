@@ -3,7 +3,9 @@ Speks
 
 ## Easily Test Your Node-Code
 
-**Speks** is a simple specification framework and spec-runner for [node.js](http://nodejs.org/) code.  If you want to demo, you can clone the repo, *cd* into the repo and 
+**Speks** is a simple specification framework and spec-runner for [node.js](http://nodejs.org/) code.  Speks provides a set of
+**should** style prototype/extension methods to make test code more readable.  This is also a nice extension point for
+adding more sophisticated assertions in future iterations.  If you want to demo, you can clone the repo, *cd* into the repo and 
 run **node speks.js** at the command line.
 
 ### Usage
