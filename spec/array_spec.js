@@ -21,4 +21,11 @@ describe('Array', function() {
   it('should not be identical', function() {
     _ar1.shouldNotBeSame(_ar2);
   });
+
+  it('should equal another array of the same value when array contains custom objects', function() {
+    var cloud = new require('../spec/cloud').Cloud();
+    _ar1.push(cloud);
+    _ar2.push(cloud);
+    _ar1.shouldEqual(_ar2);
+  });
 });
