@@ -1,7 +1,6 @@
 describe("Sephiroth", function() {
 
-  var s = require("sephiroth");
-  var sephiroth;
+  var s = require('../spec/sephiroth');
 
   beforeEach(function() {
     sephiroth = new s.Sephiroth();
