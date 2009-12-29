@@ -3,7 +3,7 @@ describe("Cloud", function() {
   // you can also require modules like so:
   // var c = require(process.cwd() + "/spec/cloud");
 
-  var c = require('../spec/cloud');
+  var c = require('../spec/examples/cloud');
 
   beforeEach(function() {
     cloud = new c.Cloud();

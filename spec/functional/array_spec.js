@@ -23,7 +23,7 @@ describe('Array', function() {
   });
 
   it('should equal another array of the same value when array contains custom objects', function() {
-    var cloud = new require('../spec/cloud').Cloud();
+    var cloud = new require('../spec/examples/cloud').Cloud();
     _ar1.push(cloud);
     _ar2.push(cloud);
     _ar1.shouldEqual(_ar2);
