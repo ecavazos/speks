@@ -50,10 +50,10 @@ Verbose mode:
     node speks.js --verbose
 
 Single file mode:
-    node speks.js example_spec.js
+    node speks.js /path/to/example_spec.js
 
 Both options:
-    node speks.js example_spec.js --verbose
+    node speks.js /path/to/example_spec.js --verbose
 
 ### TODO
 
