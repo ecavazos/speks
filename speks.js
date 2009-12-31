@@ -1,15 +1,19 @@
 var sys = require('sys');
 
-var  Speks = {
+var Speks = {
 
   version: '0.0.10',
 
-  run: function() {
+  run: function () {
     var runr = require('./lib/runner');
     var r = new runr.Runner();
 
-    try { r.run(); }
-    catch(e) { sys.puts('\n' + e); }
+    try { 
+      r.run(); 
+    }
+    catch (e) { 
+      sys.puts('\n' + e); 
+    }
   }
 
 };
