@@ -1,7 +1,5 @@
 describe('Speks', function() {
 
-  //equal = function () {return false;}
-
   beforeEach(function() {
     // do something
   });
@@ -16,7 +14,7 @@ describe('Speks', function() {
       this.bar = function() { return 'bar'; }
     };
 
-    new obj1().shouldEqual(new obj1());
+    new obj1().shouldNotEqual(new obj1());
   });
   
   it('should assert inequality of objects', function() {
