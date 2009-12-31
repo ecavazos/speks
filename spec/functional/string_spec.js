@@ -8,6 +8,10 @@ describe('String', function () {
     'foo'.shouldNotEqual('bar');
   });
 
+  it('should equal another string object of the same value', function() {
+    new String('foo').shouldEqual('foo');
+  });
+
   it('should be identical', function() {
     var a = 'foo';
     a.shouldBeSame(a);
