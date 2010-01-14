@@ -3,10 +3,13 @@ Speks
 
 ## Easily Test Your Node-Code
 
-**Speks** is a simple specification framework and spec-runner for [node.js](http://nodejs.org/) code.  Speks provides a set of
-**should** style prototype/extension methods to make test code more readable.  This is also a nice extension point for
-adding more sophisticated assertions in future iterations.  If you want to demo, you can clone the repo, *cd* into the repo and 
-run **node speks.js** at the command line.
+**Speks** is a simple specification framework and spec-runner for 
+[node.js](http://nodejs.org/) code.  Speks provides a set of
+**should** style prototype/extension methods to make test code more readable.  
+This is also a nice extension point for
+adding more sophisticated assertions in future iterations.  If you want to demo, 
+you can clone the repo, *cd* into the repo and run **node speks.js** at the 
+command line.
 
 ### Usage
 
@@ -43,6 +46,14 @@ run **node speks.js** at the command line.
       });
 
     });
+
+### Methods Of Interest
+    describe("Class/Context", func)    // main spec method
+    it("explain behavior", func)       // an individual spec
+    before(func)                       // will run once before any specs are run
+    beforeEach(func)                   // will run before every spec
+    afterEach(func)                    // will run after every spec
+    after(func)                        // will run after all specs and afterEach 
 
 ### Command Line Options
 Verbose mode:
