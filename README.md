@@ -62,7 +62,10 @@ Verbose mode:
 Single file mode:
     node speks.js /path/to/example_spec.js
 
-Both options:
+Different spec location:
+    node speks.js --spec-dir path/to/specs/
+
+Two options:
     node speks.js /path/to/example_spec.js --verbose
 
 ### TODO
