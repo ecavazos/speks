@@ -2,7 +2,7 @@ var sys = require("sys");
 
 var Speks = {
 
-  version: "0.2.3",
+  version: "0.3.0",
 
   run: function () {
     var runr = require("./lib/runner");
