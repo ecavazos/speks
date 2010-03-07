@@ -34,14 +34,14 @@ describe("Should", function () {
   it("should not throw when shouldBeSame passes", function () {
     value(function () {
       var foo = 1;
-      (foo).shouldBeSame(foo);
+      value(foo).shouldBeSame(foo);
     })
     .shouldNotThrow();
   });
 
   it("should throw when shouldBeSame fails", function () {
     value(function () {
-      ({}).shouldBeSame({});
+      value({}).shouldBeSame({});
     })
     .shouldThrow()
     .exception("Expected {} to be the same as {}");
@@ -57,7 +57,7 @@ describe("Should", function () {
   it("should throw when shouldNotBeSame fails", function () {
     value(function () {
       var foo = 1;
-      (foo).shouldNotBeSame(foo);
+      value(foo).shouldNotBeSame(foo);
     })
     .shouldThrow()
     .exception("Expected 1 to not be the same as 1");

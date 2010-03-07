@@ -1,31 +1,31 @@
-describe('String', function () {
+describe("String", function () {
   
-  it('should equal another string of the same value', function () {
-    'foo'.shouldEqual('foo');
+  it("should equal another string of the same value", function () {
+    value("foo").shouldEqual("foo");
   });
  
-  it('should not equal another string of different value', function () {
-    'foo'.shouldNotEqual('bar');
+  it("should not equal another string of different value", function () {
+    value("foo").shouldNotEqual("bar");
   });
 
-  it('should equal another string object of the same value', function () {
-    new String('foo').shouldEqual('foo');
+  it("should equal another string object of the same value", function () {
+    value(new String("foo")).shouldEqual("foo");
   });
 
-  it('should be identical', function () {
-    var a = 'foo';
-    a.shouldBeSame(a);
+  it("should be identical", function () {
+    var a = "foo";
+    value(a).shouldBeSame(a);
   });
 
-  it('should not be identical', function () {
-    'foo'.shouldBeSame('foo');
+  it("should not be identical", function () {
+    value("foo").shouldBeSame("foo");
   });
 
-  it('should match "abc"', function () {
-    'I just learned my ABCs.'.shouldMatch(/abc/i);
+  it("should match 'abc'", function () {
+    value("I just learned my ABCs.").shouldMatch(/abc/i);
   });
 
-  it('should not match "not"', function () {
-    'Maybe not'.shouldNotMatch(/NOT/);
+  it("should not match 'not'", function () {
+    value("Maybe not").shouldNotMatch(/NOT/);
   });
 });
