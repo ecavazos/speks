@@ -73,3 +73,5 @@ Two options:
 * Make a sample app
 * Create a few more should extensions
 * Create an auto-running server, like autotest/autospec
+
+Compatible with node.js version 0.1.31
