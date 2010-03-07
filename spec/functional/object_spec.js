@@ -1,4 +1,4 @@
-describe('Speks', function () {
+describe('Object', function () {
 
   beforeEach(function () {
     // do something
@@ -14,7 +14,7 @@ describe('Speks', function () {
       this.bar = function () { return 'bar'; }
     };
 
-    new obj1().shouldEqual(new obj1());
+    value(new obj1()).shouldEqual(new obj1());
   });
   
   it('should assert inequality of objects', function () {
@@ -26,7 +26,7 @@ describe('Speks', function () {
       this.bar = function () { return 'bar'; }
     };
 
-    obj1.shouldEqual(obj2);
+    value(obj1).shouldEqual(obj2);
   });
 
   it('should assert objects are the same', function () {
@@ -37,15 +37,15 @@ describe('Speks', function () {
 
     var a = new obj1();
 
-    a.shouldBeSame(a);
-    obj1.shouldBeSame(obj1);
+    value(a).shouldBeSame(a);
+    value(obj1).shouldBeSame(obj1);
   });
   
   it('should assert objects are not the same', function () {
     var a = new Object();
     var b = new Object();
 
-    a.shouldNotBeSame(b);
+    value(a).shouldNotBeSame(b);
   });
 
 });

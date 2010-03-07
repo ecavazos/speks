@@ -10,19 +10,19 @@ describe("Cloud", function () {
   });
 
   it("should be named 'Cloud'", function () {
-    cloud.getName().shouldEqual('Cloud');
+    value(cloud.getName()).shouldEqual('Cloud');
   });
 
   it("should allow name changing", function () {
     cloud.setName('Rain-Cloud');
-    cloud.getName().shouldEqual('Rain-Cloud');
+    value(cloud.getName()).shouldEqual('Rain-Cloud');
   });
 
   it("should be have an hp of 99", function () {
-    cloud.getHp().shouldEqual(99);
+    value(cloud.getHp()).shouldEqual(99);
   });
 
   it("should be have an mp of 77", function () {
-    cloud.getMp().shouldEqual(77);
+    value(cloud.getMp()).shouldEqual(77);
   });
 });
