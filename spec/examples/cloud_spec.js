@@ -18,7 +18,7 @@ describe("Cloud", function () {
     value(cloud.getName()).shouldEqual('Rain-Cloud');
   });
 
-  it("should be have an hp of 99", function () {
+  it("should have an hp of 99", function () {
     value(cloud.getHp()).shouldEqual(99);
   });
 
