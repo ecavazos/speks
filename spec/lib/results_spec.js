@@ -1,13 +1,25 @@
 describe("Results", function () {
 
   var results = require("./results");
-
+  var runrData, sysMock;
   beforeEach(function () {
+    runrData = {
+      total: 2,
+      failCount: 0,
+      contexts: []
+    };
+    sysMock = {
+      str: "",
+      print: function (s) {},
+      puts: function (s) {
+        this.str = s;
+      }
+    };
   });
 
   it("should return only the summary when the spec run contains no failures", function () {
-    var actual = results.display(2, []);
-    value(actual).shouldEqual("\033[32m2 specs, 2 passed, 0 failed\033[37m");
+    results.display(runrData, sysMock);
+    value(sysMock.str).shouldEqual("\033[32m2 specs, 2 passed, 0 failed\033[37m");
   });
 
   it("should you spec (singular form) when only one spec is run", function () {
